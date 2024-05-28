@@ -11,6 +11,13 @@ public class Biblioteca {
     this.libros.add(libro);
   }
 
+  void mostrarLibros() {
+    System.out.println("Libros en la biblioteca:");
+    for (Libro libro : listarLibros()) {
+      System.out.println(libro);
+    }
+  }
+
   public List<Libro> listarLibros() {
     return this.libros;
   }
@@ -19,15 +26,15 @@ public class Biblioteca {
     this.libros.removeIf(libro -> libro.hasId(id));
   }
 
-  public int mediaPrecios() {
+  public Precio mediaPrecios() {
     if (libros.isEmpty()) {
-      return 0;
+      return Precio.zero();
     }
 
     int precioTotal = 0;
     for (Libro libro : libros) {
       precioTotal += libro.getPrecio();
     }
-    return precioTotal / libros.size();
+    return new Precio(precioTotal / libros.size());
   }
 }

@@ -52,17 +52,18 @@ public class BibiliotecaTest {
     biblioteca.agregarLibro(libro1);
     biblioteca.agregarLibro(libro2);
 
-    int mediaPrecios = biblioteca.mediaPrecios();
+    Precio mediaPrecios = biblioteca.mediaPrecios();
 
-    assertThat(mediaPrecios).isEqualTo(1500);
+    assertThat(mediaPrecios).isEqualTo(new Precio(1500));
   }
 
   @Test
   void laMediaDaCeroSiNoHayLibros() {
     Biblioteca biblioteca = new Biblioteca();
 
-    int mediaPrecios = biblioteca.mediaPrecios();
+    Precio mediaPrecios = biblioteca.mediaPrecios();
 
-    assertThat(mediaPrecios).isEqualTo(0);
+    assertThat(mediaPrecios).isEqualTo(Precio.zero());
   }
+
 }

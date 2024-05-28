@@ -20,3 +20,11 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+tasks.jar {
+    manifest {
+        attributes(
+            "Main-Class" to "org.example.exercise_02.Principal"
+        )
+    }
+}
