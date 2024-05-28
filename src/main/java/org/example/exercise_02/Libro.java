@@ -1,5 +1,8 @@
 package org.example.exercise_02;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Libro {
 
   private final int id;
@@ -20,12 +23,16 @@ public class Libro {
     this.precio = new Precio(precio);
   }
 
-  public boolean hasId(final int id) {
-    return this.id == id;
+  static Precio mediaPrecios(final List<Libro> libros) {
+    ArrayList<Precio> precios = new ArrayList<>();
+    for (Libro libro : libros) {
+      precios.add(libro.precio);
+    }
+    return Precio.calcularMedia(precios);
   }
 
-  public int getPrecio() {
-    return precio.getPrecio();
+  public boolean hasId(final int id) {
+    return this.id == id;
   }
 
   @Override

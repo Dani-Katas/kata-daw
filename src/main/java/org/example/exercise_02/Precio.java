@@ -1,5 +1,6 @@
 package org.example.exercise_02;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Precio {
@@ -13,12 +14,19 @@ public class Precio {
     this.precio = precio;
   }
 
-  static Precio zero() {
-    return new Precio(0);
+  static Precio calcularMedia(final List<Precio> precios) {
+    if (precios.isEmpty()) {
+      return Precio.zero();
+    }
+    int precioTotal = 0;
+    for (Precio precio : precios) {
+      precioTotal = precioTotal + precio.precio;
+    }
+    return new Precio(precioTotal / precios.size());
   }
 
-  public int getPrecio() {
-    return precio;
+  static Precio zero() {
+    return new Precio(0);
   }
 
   @Override

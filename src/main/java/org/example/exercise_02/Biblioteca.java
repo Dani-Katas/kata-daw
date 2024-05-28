@@ -27,14 +27,6 @@ public class Biblioteca {
   }
 
   public Precio mediaPrecios() {
-    if (libros.isEmpty()) {
-      return Precio.zero();
-    }
-
-    int precioTotal = 0;
-    for (Libro libro : libros) {
-      precioTotal += libro.getPrecio();
-    }
-    return new Precio(precioTotal / libros.size());
+    return Libro.mediaPrecios(libros);
   }
 }
