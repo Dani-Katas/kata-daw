@@ -1,4 +1,4 @@
-package org.example.exercise_01;
+package org.example.exercise_02;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

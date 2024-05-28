@@ -1,4 +1,4 @@
-package org.example.exercise_01;
+package org.example.exercise_02;
 
 public class Libro {
 
@@ -10,18 +10,14 @@ public class Libro {
 
   private final String genero;
 
-  private final int precio;
+  private final Precio precio;
 
   public Libro(final int id, final String nombre, final String autor, final String genero, final int precio) {
-    if (precio < 0) {
-      throw new IllegalArgumentException("El precio no puede ser negativo");
-    }
-
     this.id = id;
     this.nombre = nombre;
     this.autor = autor;
     this.genero = genero;
-    this.precio = precio;
+    this.precio = new Precio(precio);
   }
 
   public boolean hasId(final int id) {
@@ -29,6 +25,17 @@ public class Libro {
   }
 
   public int getPrecio() {
-    return precio;
+    return precio.getPrecio();
+  }
+
+  @Override
+  public String toString() {
+    return "Libro{" +
+        "id=" + id +
+        ", nombre='" + nombre + '\'' +
+        ", autor='" + autor + '\'' +
+        ", genero='" + genero + '\'' +
+        ", precio=" + precio +
+        '}';
   }
 }

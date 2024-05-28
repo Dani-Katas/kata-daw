@@ -1,8 +1,7 @@
-package org.example.exercise_01;
+package org.example.exercise_02;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.OptionalDouble;
 
 public class Biblioteca {
 
